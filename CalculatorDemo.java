@@ -17,18 +17,18 @@ public static double motionCalc1(double s , double u , double a , double t) {
 		
 	}
 
-public static double motionCalc2(double v, double u , double a , double t) {
-	v = 0.0;
+public static double motionCalc2(double v0, double u , double a , double t) {
+	v0 = 0.0;
 	
-	v += u + (a*t);
-	return v;
+	v0 += u + (a*t);
+	return v0;
 }
 
-public static double motionCalc3(double v, double u, double a , double t) {
-	a = 0.0;
+public static double motionCalc3(double v, double u, double a0 , double t) {
+	a0 = 0.0;
 	
-	a += (v - u) / t;
-	return a;
+	a0 += (v - u) / t;
+	return a0;
 	
 }
 
@@ -52,7 +52,8 @@ public static double forceCalc(double f , double m , double a) {
 		// TODO Auto-generated method stub
 		
 		// This is a console calculator. It contains most of the equations to perform Physics calculations
-        int input , input2 , input3;
+        int input , input2;
+        String input7 , input3;
 		Scanner in = new Scanner(System.in);
 		// Picking a certain calculator
 		System.out.println("Pick an ineteger assigned to the following: ");
@@ -71,88 +72,103 @@ public static double forceCalc(double f , double m , double a) {
 		System.out.println("2- For final velocity ");
 		System.out.println("3- For the acceleration due to gravity");
 		System.out.println("4- For the time ");
-		Scanner pet = new Scanner(System.in);
-		input2 = pet.nextInt();
+		input7 = in.next();
+		input2 = Integer.parseInt(input7);
+		
 		
 		switch(input2) {
 		
 		case 1: 
-			double u,a,t;
+			String u,a,t;
 			double s = 0.0;
 			
 			
-			Scanner vet = new Scanner(System.in);
+			
 			System.out.println("Enter a value for u: ");
-			u = vet.nextInt();
-			System.out.println("You entered " + u);
+			u = in.next();
+			int u1 = Integer.parseInt(u);
+			System.out.println("You entered " + u1);
 			System.out.println("Enter a value for a: ");
-			a = vet.nextInt();
-			System.out.println("You entered " + a);
+			a = in.next();
+			int a1 = Integer.parseInt(a);
+			System.out.println("You entered " + a1);
 			System.out.println("Enter a value for t: ");
-			t = vet.nextInt();
-			System.out.println("You entered " + t);
+			t = in.next();
+			int t1 = Integer.parseInt(t);
+			System.out.println("You entered " + t1);
 			System.out.print("The total distance travelled is:   ");
-			System.out.println(motionCalc1(s,u,a,t) + " m");
+			System.out.println(motionCalc1(s,u1,a1,t1) + " m");
 			
 			
 		case 2:
-			double v = 0.0;
+			double v0 = 0.0;
 			
 			
-			Scanner bet = new Scanner(System.in);
+			
 			System.out.println("Enter a value for u: ");
-			u = bet.nextInt();
-			System.out.println("You entered " + u);
+			u = in.next();
+			int u2 = Integer.parseInt(u);
+			System.out.println("You entered " + u2);
 			System.out.println("Enter a value for a: ");
-			a = bet.nextInt();
-			System.out.println("You entered " + a);
+			a =in.next();
+			int a2 = Integer.parseInt(a);
+			System.out.println("You entered " + a2);
 			System.out.println("Enter a value for t: ");
-			t = bet.nextInt();
-			System.out.println("You entered " + t);
+			t = in.next();
+			int t2 = Integer.parseInt(t);
+			System.out.println("You entered " + t2);
 			System.out.print("The final velocity is: ");
-			System.out.println(motionCalc2(v,u,a,t) + " m/s");
+			System.out.println(motionCalc2(v0,u2,a2,t2) + " m/s");
 			break;
 			
 			
 		case 3: 
-			 a = 0.0;
+			double a0 = 0.0;
+			String v;
 			 
-			 Scanner get = new Scanner(System.in);
+			 
 			 System.out.println("Enter a value for v: ");
-			 v = get.nextInt();
-			 System.out.println("You entered " + v);
+			 v = in.next();
+			 int v1 = Integer.parseInt(v);
+			 System.out.println("You entered " + v1);
 			 System.out.println("Enter a value for u: ");
-			 u = get.nextInt();
-			 System.out.println("You entered " + u);
+			 u = in.next();
+			 int u3 = Integer.parseInt(u);
+			 System.out.println("You entered " + u3);
 			 System.out.println("Enter a value for t: ");
-			 t = get.nextInt();
+			 t = in.next();
+			 int t3 = Integer.parseInt(t);
 			 System.out.println("You entered " + t);
 			 System.out.print("The acceleration is: ");
-			 System.out.println(motionCalc3(v,u,a,t) + " m/s^2");
+			 System.out.println(motionCalc3(v1,u3,a0,t3) + " m/s^2");
 			 break;
 			 
 			 
 		case 4:
-			t = 0.0;
+			double t0 = 0.0;
 			
-			Scanner let = new Scanner(System.in);
+			
 			System.out.println("Enter a value for v: ");
-			v = let.nextInt();
-			System.out.println("You entered " + v);
+			v = in.next();
+			int v2 = Integer.parseInt(v);
+			System.out.println("You entered " + v2);
 			System.out.println("Enter  value for u: ");
-			u = let.nextInt();
-			System.out.println("You entered " + u);
+			u = in.next();
+			int u4 = Integer.parseInt(u);
+			System.out.println("You entered " + u4);
 			System.out.println("Enter a value for a: ");
-			a = let.nextInt();
-			System.out.println("You entered " + a);
+			a = in.next();
+			int a3 = Integer.parseInt(a);
+			System.out.println("You entered " + a3);
 			System.out.print("The total time used: ");
-			System.out.println(motionCalc4(v,u,a,t) + " seconds");
+			System.out.println(motionCalc4(v2,u4,a3,t0) + " seconds");
 			break;
 			 
 			 
 			
 		
 		}
+		break;
 		
 		
 		case 2:
